@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+.next/
+dist/
+
+# Production
+build/
+
+# Misc
+.DS_Store
+*.tgz
+*.tar.gz
