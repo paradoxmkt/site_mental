@@ -7,6 +7,7 @@ import OfferHeader from './OfferHeader';
 
 export default function FinalScreen() {
   const videoId = 'ki6dzN0KRxI';
+  const checkoutUrl = 'https://www.ggcheckout.com/checkout/v2/bQwn8114oBPemsOuim9m';
 
   return (
     <div className="w-full flex flex-col items-center gap-6 pt-16 pb-0 animate-in fade-in-0 duration-1000">
@@ -34,7 +35,7 @@ export default function FinalScreen() {
         </Card>
       </div>
 
-      <a href="/#" className="w-full max-w-sm">
+      <a href={checkoutUrl} className="w-full max-w-sm">
         <Button
           variant="default"
           size="lg"

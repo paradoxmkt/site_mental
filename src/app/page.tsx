@@ -52,9 +52,11 @@ export default function Home() {
       case 'intro':
         return <Intro onStartQuiz={startQuiz} />;
       case 'quiz':
+        const question = quizQuestions[currentQuestionIndex];
+        if (!question) return null; // Prevent rendering if question is undefined
         return (
           <QuestionCard
-            question={quizQuestions[currentQuestionIndex]}
+            question={question}
             onAnswer={handleAnswer}
             questionNumber={currentQuestionIndex + 1}
             totalQuestions={quizQuestions.length}
