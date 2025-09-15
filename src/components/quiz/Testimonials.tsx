@@ -30,7 +30,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ name, rating, comment }: (typeof testimonials)[0]) => (
-  <Card className="w-full bg-background/50">
+  <Card className="w-full bg-card-background/80 backdrop-blur-sm">
     <CardContent className="p-4">
       <div className="flex items-center justify-between mb-2">
         <p className="font-bold text-primary text-sm md:text-base">{name}</p>

@@ -8,7 +8,12 @@ import {
 } from '@/components/ui/dialog';
 import { Award } from 'lucide-react';
 
-export default function SuccessPopup({ onContinue }: { onContinue: () => void }) {
+type SuccessPopupProps = {
+  onContinue: () => void;
+  nickname: string;
+};
+
+export default function SuccessPopup({ onContinue, nickname }: SuccessPopupProps) {
   return (
     <Dialog open={true}>
       <DialogContent className="text-center p-6 w-[calc(100%-2rem)] max-w-sm">
@@ -20,7 +25,9 @@ export default function SuccessPopup({ onContinue }: { onContinue: () => void })
             Sucesso!
           </DialogTitle>
           <DialogDescription className="text-base text-foreground/80 pt-1">
-            Você conseguiu o super desconto de{' '}
+            Parabéns,{' '}
+            <span className="font-bold text-primary">{nickname}</span>! Você
+            conseguiu o super desconto de{' '}
             <span className="font-bold text-primary">90%</span>!
           </DialogDescription>
         </DialogHeader>

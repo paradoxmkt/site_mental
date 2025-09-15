@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --background: 210 40% 96.1%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -15,7 +15,7 @@
     --secondary: 210 40% 90%;
     --secondary-foreground: 222.2 84% 4.9%;
     --muted: 210 40% 90%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 215 20.2% 65.1%;
     --accent: 142 76% 36%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
@@ -75,5 +75,28 @@
     transform: translateX(-100%);
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     animation: shimmer 2.5s infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes particle-animation {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.5);
+      opacity: 0;
+    }
   }
 }

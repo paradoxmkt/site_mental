@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Gamepad2 } from 'lucide-react';
+import Image from 'next/image';
 
 type IntroProps = {
   onStartQuiz: () => void;
@@ -14,10 +14,16 @@ type IntroProps = {
 
 export default function Intro({ onStartQuiz }: IntroProps) {
   return (
-    <Card className="text-center shadow-2xl shadow-primary/10 border-primary/20">
+    <Card className="text-center shadow-2xl shadow-primary/10 border-primary/20 bg-card-background/80 backdrop-blur-sm">
       <CardHeader>
-        <div className="mx-auto bg-primary/10 p-3 md:p-4 rounded-full mb-4 w-min">
-          <Gamepad2 className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+        <div className="mx-auto mb-4 w-20 h-20">
+          <Image
+            src="https://i.imgur.com/eRPjBXr.png"
+            alt="Troféu Roblox"
+            width={80}
+            height={80}
+            className="w-full h-auto"
+          />
         </div>
         <CardTitle className="text-2xl md:text-3xl font-bold text-primary font-headline">
           Quiz Roblox

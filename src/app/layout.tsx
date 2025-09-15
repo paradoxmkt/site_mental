@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import AnimatedBackground from '@/components/common/AnimatedBackground';
 
 export const metadata: Metadata = {
   title: 'Roblox Quiz Mania',
@@ -27,6 +28,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
+        <AnimatedBackground />
         {children}
         <Toaster />
       </body>

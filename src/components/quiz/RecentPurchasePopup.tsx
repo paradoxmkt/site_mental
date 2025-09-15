@@ -63,7 +63,7 @@ export default function RecentPurchasePopup() {
           : 'opacity-0 -translate-y-10 pointer-events-none'
       )}
     >
-      <div className="flex items-center gap-3 bg-background/80 backdrop-blur-md p-3 rounded-lg shadow-lg border border-border">
+      <div className="flex items-center gap-3 bg-primary/10 backdrop-blur-md p-3 rounded-lg shadow-lg border border-border">
         <div className="bg-primary/10 text-primary p-2 rounded-full">
           <ShoppingCart className="w-5 h-5" />
         </div>

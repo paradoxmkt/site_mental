@@ -1,38 +1,44 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ShieldCheck } from 'lucide-react';
 import RecentPurchasePopup from './RecentPurchasePopup';
 import Testimonials from './Testimonials';
-import OfferHeader from './OfferHeader';
+import Image from 'next/image';
 
-export default function FinalScreen() {
-  const videoId = 'ki6dzN0KRxI';
+type FinalScreenProps = {
+  nickname: string;
+};
+
+export default function FinalScreen({ nickname }: FinalScreenProps) {
   const checkoutUrl = 'https://www.ggcheckout.com/checkout/v2/bQwn8114oBPemsOuim9m';
 
   return (
     <div className="w-full flex flex-col items-center gap-6 pt-16 pb-0 animate-in fade-in-0 duration-1000">
-      <OfferHeader />
+      <div className="text-center">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-primary-foreground tracking-tight">
+          OFERTA DE 21º ANIVERSÁRIO DO ROBLOX
+        </h1>
+        <p className="text-lg md:text-xl text-primary-foreground/80 mt-2">
+          Seu cupom de 90% de desconto foi ativado!
+        </p>
+      </div>
       <RecentPurchasePopup />
+
+      <div className="w-full max-w-sm">
+        <Image
+          src="https://i.imgur.com/Ox0gz6C.png"
+          alt="Roblox Header"
+          width={512}
+          height={132}
+          className="w-full h-auto"
+        />
+      </div>
 
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground animate-pulse">
           Aproveite a promoção antes que acabe!
         </h2>
-      </div>
-
-      <div className="w-full max-w-sm mx-auto">
-        <Card className="w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/20 border-accent/20">
-          <div className="aspect-[9/16] w-full bg-black">
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
-          </div>
-        </Card>
       </div>
 
       <a href={checkoutUrl} className="w-full max-w-sm">
@@ -45,9 +51,31 @@ export default function FinalScreen() {
         </Button>
       </a>
 
+      <div className="text-center text-primary-foreground/90 max-w-sm w-full p-4 bg-primary/10 rounded-lg">
+        <p className="font-bold text-lg">
+          💎 Parabéns {nickname}, você desbloqueou a oferta secreta!
+        </p>
+        <p className="mt-2">
+          Você acaba de garantir 5.200 Robux por apenas{' '}
+          <span className="font-bold text-accent">R$19,90</span>.
+        </p>
+        <p className="font-semibold">Disponível apenas hoje!</p>
+        <p className="mt-4 font-bold text-xl">👉 Não perca !</p>
+      </div>
+
+      <a href={checkoutUrl} className="w-full max-w-sm">
+        <Button
+          variant="default"
+          size="lg"
+          className="w-full h-16 md:h-20 text-base md:text-xl font-bold bg-accent hover:bg-accent/90 text-accent-foreground"
+        >
+          Garantir Robux
+        </Button>
+      </a>
+
       <Testimonials />
 
-      <Card className="w-full max-w-sm bg-background/80 backdrop-blur-sm">
+      <Card className="w-full max-w-sm bg-card-background/80 backdrop-blur-sm">
         <CardContent className="p-4 text-center">
           <div className="flex items-center justify-center gap-2">
             <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 text-primary" />

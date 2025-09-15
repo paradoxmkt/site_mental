@@ -29,7 +29,7 @@ export default function LoadingScreen({
   }, [onComplete]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 p-6 md:p-8 rounded-2xl bg-card shadow-lg">
+    <div className="flex flex-col items-center justify-center gap-6 p-6 md:p-8 rounded-2xl bg-card-background/80 backdrop-blur-sm shadow-lg">
       <Loader2 className="w-14 h-14 md:w-16 md:h-16 text-primary animate-spin" />
       <h2 className="text-xl md:text-2xl font-semibold text-foreground text-center">
         Calculando sua pontuação...
